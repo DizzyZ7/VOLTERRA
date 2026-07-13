@@ -1,0 +1,25 @@
+/* Responsive hardening — 2026-07 */
+html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+body, main, section, footer { min-width: 0; }
+.hero, .journey, .platforms, .proof, .footer { overflow-x: clip; }
+.section-shell { max-width: calc(100% - 32px); }
+.hero__title { width: min(100%, 1740px); padding-inline: 2vw; font-size: clamp(72px, 8.8vw, 156px); line-height: .82; }
+.hero__title-line:first-child { transform: translateX(-1%); }
+.hero__title-line:last-child { transform: translateX(1%); }
+.platforms { max-width: 100%; overflow: clip; }
+.platform-rail { will-change: transform; }
+.platform-card, .platform-card > *, .impact-model > *, .contact > * { min-width: 0; }
+@media (max-width: 899px) {
+  .hero { overflow: hidden; min-height: max(760px, 100svh); }
+  .hero__title { width: calc(100% - 24px); padding: 0; font-size: clamp(54px, 14.8vw, 78px); line-height: .9; letter-spacing: -.055em; transform: translate(-50%, -50%) !important; }
+  .hero__title-line:first-child, .hero__title-line:last-child { transform: none; }
+  .hero__reactor { max-width: 100%; }
+  .platform-rail { transform: none !important; overflow: visible; }
+  .platform-card { max-width: 100%; overflow: hidden; }
+  .platform-card h3 { font-size: clamp(54px, 15vw, 86px); line-height: .86; overflow-wrap: anywhere; }
+  .impact-output, .impact-visual { min-width: 0; }
+}
+@media (max-width: 520px) {
+  .hero__title { font-size: clamp(50px, 14vw, 66px); }
+  .reactor-card { max-width: 38vw; min-width: 0; }
+}
